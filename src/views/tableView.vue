@@ -7,13 +7,16 @@
         <div class="item"><i class="fa-solid fa-book"></i>
             <div class="text">系統二</div>
         </div>
+        <div class="item"><i class="fa-solid fa-book"></i>
+            <div class="text">系統三</div>
+        </div>
 
     </div>
 
 
     <div :class="{ close: isActive }" class="content">
-        <!-- <div class="top"><img id="nvlg" class="nav_logo" src="https://www.yoyorock.com/images/logo_rockmobile.png"
-                title="滾石移動 Rock Mobile"></div> -->
+        <div class="top"><img id="nvlg" class="nav_logo" src="https://www.yoyorock.com/images/logo_rockmobile.png"
+                title="滾石移動 Rock Mobile"></div>
         <div class="inputbox">
             <div class="input-text">訊息表格</div>
             <div class="input-btn">
@@ -72,52 +75,37 @@ export default {
         };
     },
     methods: {
-        // addItem() {
-        //     // 檢查是否不為空
-        //     if (this.inputContent.trim() !== '') {
-        //         // editingIndex為-1表示要添加內容
-        //         if (this.editingIndex === -1) {
-        //             // 將內容添加到items陣列中
-        //             this.items.push({
-        //                 content: this.inputContent,//輸入的內容
-        //                 timestamp: new Date(),//取得的時間
-        //                 editing: false,//預設表示不處於編輯狀態
-        //             });
-        //             // 最後清空資料
-        //             this.inputContent = '';
-        //         } else {
-        //             // 如果editingIndex不為-1表示在編輯
-        //             this.items[this.editingIndex].content = this.inputContent;
-        //             // 在更新內容將editing設為false
-        //             this.items[this.editingIndex].editing = false;
-        //             // 再將 editingIndex改為-1
-        //             this.editingIndex = -1;
-        //         }
 
-        //     }
-        // },
         addItem() {
+            // 檢查是否不為空
             if (this.editInputContent.trim() !== '') {
+                // editingIndex為-1表示要添加內容
                 if (this.editingIndex === -1) {
+                    // 將內容添加到items陣列中
                     this.items.push({
                         content: this.editInputContent,
                         timestamp: new Date(),
                         editing: false,
                     });
                 } else {
+                    // 如果editingIndex不為-1表示在編輯
                     this.items[this.editingIndex].content = this.editInputContent;
+                    // 在更新內容將editing設為false
                     this.items[this.editingIndex].editing = false;
+                    // 再將 editingIndex改為-1
                     this.editingIndex = -1;
-                    this.editInputContent = '';
+
                 }
             } else {
-                // 新增時使用 inputContent
+                // 檢查是否不為空
                 if (this.inputContent.trim() !== '') {
+                    // 將內容添加到items陣列中
                     this.items.push({
                         content: this.inputContent,
                         timestamp: new Date(),
                         editing: false,
                     });
+                    // 最後清空輸入內容
                     this.inputContent = '';
                 }
             }
