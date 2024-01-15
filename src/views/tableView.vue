@@ -15,8 +15,8 @@
 
 
     <div :class="{ close: isActive }" class="content">
-        <!-- <div class="top"><img id="nvlg" class="nav_logo" src="https://www.yoyorock.com/images/logo_rockmobile.png"
-                title="滾石移動 Rock Mobile"></div> -->
+        <div class="top"><img id="nvlg" class="nav_logo" src="https://www.yoyorock.com/images/logo_rockmobile.png"
+                title="滾石移動 Rock Mobile"></div>
         <div class="inputbox">
             <div class="input-text">訊息表格</div>
             <div class="input-btn">
